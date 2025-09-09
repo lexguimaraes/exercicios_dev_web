@@ -1,6 +1,6 @@
+com/alex/util/FabricaDeEntityManager.class
 com/alex/dao/impl/JPAAlunoDAO.class
 com/alex/dao/AlunoDAO.class
-com/alex/util/FabricaDeEntityManager.class
 com/alex/excecao/AlunoNaoEncontradoException.class
 com/alex/util/FabricaDeDAOs.class
 com/alex/excecao/ProdutoNaoEncontradoException.class
@@ -9,5 +9,5 @@ com/alex/dao/impl/JPAProdutoDAO.class
 com/alex/dao/ProdutoDAO.class
 com/alex/modelo/Aluno.class
 com/alex/util/Util.class
-com/alex/TestaAluno.class
 com/alex/Principal.class
+com/alex/TestaAluno.class
