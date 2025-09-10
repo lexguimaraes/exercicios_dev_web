@@ -32,7 +32,6 @@ public class JPAAlunoDAO implements AlunoDAO
             // 2. Executa a inserção do comando insert
             // 3. Atribui o valor do id em umAluno
             System.out.println("id = " + umAluno.getId());
-            umAluno.setNome("abc");
             // 4. Agenda a execução de um comando update
             tx.commit();
             // 5. Executa o comando update e commita
