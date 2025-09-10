@@ -4,13 +4,9 @@ import com.alex.dao.AlunoDAO;
 import com.alex.excecao.AlunoNaoEncontradoException;
 import com.alex.modelo.Aluno;
 import com.alex.util.FabricaDeDAOs;
-import com.alex.util.Util;
 import corejava.Console;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.List;
-import java.util.function.Consumer;
 
 public class TestaAluno {
 
@@ -72,14 +68,15 @@ public class TestaAluno {
 					System.out.println('\n' + 
 						"Número = " + umAluno.getId() +
 						"    Nome = " + umAluno.getNome() +
-						"    Lance mínimo = " + umAluno.getEmail());
+						"    cpf = " + umAluno.getCpf() + 
+                        "    email = " + umAluno.getEmail());
 												
 					System.out.println('\n' + "O que você deseja alterar?");
 					System.out.println('\n' + "1. Nome");
-					System.out.println("2. Lance mínimo");
-
+					System.out.println("2. cpf");
+					System.out.println("3. email");
 					int opcaoAlteracao = Console.readInt('\n' + 
-											"Digite um número de 1 a 2:");
+											"Digite um número de 1 a 3:");
 
 					switch (opcaoAlteracao)
 					{	case 1:
@@ -112,7 +109,7 @@ public class TestaAluno {
 								alunoDAO.altera(umAluno);
 
 								System.out.println('\n' +
-									"Alteração de lance mínimo efetuada " +
+									"Alteração de cpf efetuada " +
 									"com sucesso!");
 							}
 							catch(AlunoNaoEncontradoException e)
@@ -121,6 +118,21 @@ public class TestaAluno {
 
 							break;
 
+                        case 3:
+                            String novo_email = Console.readLine("Digite o novo email: ");
+
+                            umAluno.setEmail(novo_email);
+                        
+                            try
+                            {
+                                alunoDAO.altera(umAluno);
+                                System.out.println("Alteração de email efetuada com sucesso");
+                            }
+                            catch(AlunoNaoEncontradoException e)
+                            {   System.out.println('\n' + e.getMessage());
+                            }
+                        
+                        
 						default:
 							System.out.println('\n' + "Opção inválida!");
 					}
